@@ -19,10 +19,10 @@ app.use('/api/courses', require('./routes/courseRoutes'));
 app.use('/api/enrollments', require('./routes/enrollmentRoutes'));
 app.use('/api/payouts', require('./routes/payoutRoutes'));
 app.use('/api/admin', require('./routes/adminRoutes'));
-// app.use('/api/upload', require('./routes/uploadRoutes'));
+app.use('/api/upload', require('./routes/uploadRoutes'));
 
 // Make uploads folder static
-// app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
+app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
 
 app.use(require('./middleware/errorMiddleware').errorHandler);
 
